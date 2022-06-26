@@ -7,37 +7,43 @@
 	<title>점수 확인</title>
 </head>
 <body>
-	<h1> 점수 보기</h1>
-	<h5> 100점</h5>
-	<br><hr><br>
+	<div class = "header">
+		<h1> 점수 보기</h1>
+		<h5> 100점</h5>
+		<br><hr><br>
+		
+	</div>
 	
-	<p>hi you must study fucking hard</p>
-	<input type="text" value="">
-	<h5>답 : </h5>
+	<div>
 	
-	<p>hi you must study fucking hard</p>
-	<input type="text" value="">
-	<h5>답 : </h5>
-	
-	<p>hi you must study fucking hard</p>
-	<input type="text" value="">
-	<h5>답 : </h5>
-	
-	<p>hi you must study fucking hard</p>
-	<input type="text" value="">
-	<h5>답 : </h5>
-	
-	<p>hi you must study fucking hard</p>
-	<input type="text" value="">
-	<h5>답 : </h5>
-	
-	<p>hi you must study fucking hard</p>
-	<input type="text" value="">
-	<h5>답 : </h5>
-	
-	<p>hi you must study fucking hard</p>
-	<input type="text" value="">
-	<h5>답 : </h5>
+		<p>hi you must study fucking hard</p>
+		<input type="text" value="">
+		<h5>답 : </h5>
+		
+		<p>hi you must study fucking hard</p>
+		<input type="text" value="">
+		<h5>답 : </h5>
+		
+		<p>hi you must study fucking hard</p>
+		<input type="text" value="">
+		<h5>답 : </h5>
+		
+		<p>hi you must study fucking hard</p>
+		<input type="text" value="">
+		<h5>답 : </h5>
+		
+		<p>hi you must study fucking hard</p>
+		<input type="text" value="">
+		<h5>답 : </h5>
+		
+		<p>hi you must study fucking hard</p>
+		<input type="text" value="">
+		<h5>답 : </h5>
+		
+		<p>hi you must study fucking hard</p>
+		<input type="text" value="">
+		<h5>답 : </h5>
+	</div>
 
 </body>
 </html>

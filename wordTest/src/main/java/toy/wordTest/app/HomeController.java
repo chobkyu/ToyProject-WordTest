@@ -66,7 +66,7 @@ public class HomeController {
 	}
 	
 
-	@RequestMapping(value = "/score", method = RequestMethod.GET)
+	@RequestMapping(value = "/score", method = {RequestMethod.GET,RequestMethod.POST})
 	public String score(Locale locale, Model model) {
 		logger.info("Welcome home! The client locale is {}.", locale);
 		

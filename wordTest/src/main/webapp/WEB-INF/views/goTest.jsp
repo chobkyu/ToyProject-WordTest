@@ -10,7 +10,7 @@
 	<h1> 단어 시험</h1>
 	<h5> 1과 (80점 미만이면 틀린 개수만큼 5분씩 추가)</h5>
 	<br><hr><br>
-	<form>
+	<form method="post" action="/score">
 		<p>hi you must study fucking hard</p>
 		<input type="text" value=""> 
 		<p>hi you must study fucking hard</p>
@@ -27,7 +27,7 @@
 		<input type="text" value="">
 		
 		<br><br>
-		<button type="submit" value="제출하기">제출하기</button>
+		<button onclick="alert('정말 제출 하시겠습니까?');" type="submit" value="제출하기">제출하기</button>
 	</form>
 	
 	
