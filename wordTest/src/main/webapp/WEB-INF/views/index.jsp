@@ -18,12 +18,13 @@
 		</ul>
 	</nav>
 	<br>
+	<!-- 
 	<ul class="Gimg">
 		<li><img src = /resources/img/노예준1.png></li>
 		<li><img src = "/resources/img/노예준2.jpg"></li>
 		<li><img src = "/resources/img/노예준4.jpg"></li>
 	</ul>
-	
+	 -->
 	<br>
 	<hr>
 	<h5>제작자 | 조병규</h5>
