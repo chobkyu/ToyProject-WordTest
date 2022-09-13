@@ -71,8 +71,10 @@ public class HomeController {
 		
 		List<WordVO> wlist = wordService.exam(seq);
 		System.out.println(wlist.get(0).getEn());
-	
+		int size = wlist.size();
 		
+		model.addAttribute("wlist",wlist);
+		model.addAttribute("size",size);
 		return "goTest";
 	}
 	
