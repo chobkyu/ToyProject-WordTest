@@ -13,7 +13,7 @@
 	<nav class="prontbar">
 		<ul class = "bar_menu">
 			<li><a href = "/test">Test</a></li>
-			<li><a href = "/">Score</a></li>
+			<li><a href = "/score">Score</a></li>
 			<li><a href = "/">Word</a></li>
 		</ul>
 	</nav>

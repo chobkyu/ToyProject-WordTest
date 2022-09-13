@@ -1,6 +1,7 @@
 package toy.wordTest.app;
 
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import toy.wordTest.DAO.wordTestDao;
+import toy.wordTest.service.ScoreService;
 import toy.wordTest.service.wordTestService;
 
 /**
@@ -29,6 +31,8 @@ public class HomeController {
 	
 	@Inject
 	private wordTestService wordService;
+	@Inject
+	private ScoreService scoreService;
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
@@ -80,7 +84,23 @@ public class HomeController {
 	
 
 	@RequestMapping(value = "/score", method = {RequestMethod.GET,RequestMethod.POST})
-	public String score(Locale locale, Model model) {
+	public String score(HttpServletRequest request, Model model) {
+		String option = request.getParameter("option");
+		
+		if(option==null) {
+			
+		}
+		else if(option.equals("insert")) {
+			ScoreVO sVO = new ScoreVO();
+			sVO.setScore(Integer.parseInt(request.getParameter("score")));
+			sVO.setDate(request.getParameter("time"));
+			sVO.setGrade(request.getParameter("grade"));
+
+			scoreService.insertScore(sVO);
+		}
+		
+		List<ScoreVO> slist = new ArrayList<ScoreVO>();
+		slist = scoreService.selectScore();
 		
 		
 		return "score";

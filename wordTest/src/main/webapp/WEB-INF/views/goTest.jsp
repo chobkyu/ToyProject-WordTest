@@ -16,7 +16,7 @@
 	console.log(arr[0].en);
 	
 	var lastScore = 0;
-	
+	var grade="F";
 	function score(){
 		var score = 0;
 		for (var i =0; i<arr.length;i++){
@@ -36,14 +36,18 @@
 		console.log(score/arr.length);
 		document.getElementById("score").innerText="맞힌 개수 : "+score+"";
 		var scoreNum=(score/arr.length)*100;
+		grade="A";
 		if(scoreNum<80){
 			var log = (arr.length-score)*5
 			document.getElementById("time").innerText="늘어나는 수업 시간 : "+log+"분";
-			document.getElementById("comment").innerText="멀어져가는 인서울의 꿈..."
+			document.getElementById("comment").innerText="멀어져가는 인서울의 꿈...";
+			grade="B";
 			if(scoreNum<60){
 				document.getElementById("comment").innerText="경기도를 알아보기 시작하는 점수..."
+				grade="C";
 			}
 			if(scoreNum<40){
+				grade="F";
 				document.getElementById("comment").innerText="oh shit 그대는 치킨대학교에 가겠군요"
 			}
 		}
@@ -61,7 +65,7 @@
 		alert(time+" 결과를 제출합니다");
 		console.log(lastScore);
 		
-		location.href = "/score?score="+lastScore+"&time="+time;
+		location.href = "/score?score="+lastScore+"&time="+time+"&option=insert&grade="+grade;
 	}
 </script>
 <body>

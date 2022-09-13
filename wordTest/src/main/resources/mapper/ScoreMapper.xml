@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+  <mapper namespace="toy.wordTest.mapper.ScoreMapper">
+  	<insert id="insertScore">
+  		insert into score(score,date,grade)
+  		values (#{score},#{date},#{grade})
+  	</insert>
+  	
+  	<select id="selectScore" resultType="toy.wordTest.app.ScoreVO">
+  		select *
+  		from score
+  	</select>
+  </mapper>
