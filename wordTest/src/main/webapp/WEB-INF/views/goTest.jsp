@@ -25,10 +25,13 @@
 				score++;
 			}
 			else{
+				document.getElementById(arr[i].kr).innerText="오답";
 				console.log(i+"번 오답");
 			}
 		}
-		alert(score/arr.length);
+		console.log(score/arr.length);
+		score=(score/arr.length)*100;
+		alert(parseInt(score));
 		
 	}
 </script>
@@ -38,8 +41,8 @@
 	<br><hr><br>
 	
 	<c:forEach items="${wlist}" var="dataVO">
-		<p><c:out value="${dataVO.en}"></c:out></p>
-		<input id= "${dataVO.en}" type="text" value=""> 
+		<p><c:out value="${dataVO.en}"></c:out></p> <p id="${dataVO.kr}"><p>
+		<input id= "${dataVO.en}" type="text" value="">
 	</c:forEach>
 		
 		
