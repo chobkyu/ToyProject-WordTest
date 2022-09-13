@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.Locale;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,12 +58,15 @@ public class HomeController {
 		System.out.println(level);
 		
 		
+		
 		return "wordTest";
 	}
 	
 	@RequestMapping(value = "/goTest", method = RequestMethod.GET)
-	public String goTest(Locale locale, Model model) {
+	public String goTest(HttpServletRequest request, Model model) {
+		String seq = request.getParameter("seq");
 		
+		System.out.println(seq+"과 시험 시작!!!");
 		
 	
 		

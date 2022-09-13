@@ -6,6 +6,15 @@
 	<meta charset="UTF-8">
 	<title>단원 고르기</title>
 </head>
+
+<script>
+	function wordTest(level){
+		var level = level;
+		console.log(level);
+		
+		location.href = "/goTest?seq="+level;
+	}
+</script>
 <body>
 	<h1> 단어 시험</h1>
 	<h5> 해당 과를 누르면 시험이 시작됩니다</h5>
@@ -16,18 +25,15 @@
 			<th>몇 점을 맞을 수 있을까</th>
 		</thead>
 		<tbody>
-			<tr>
-				<td>1과</td>
-				<td onclick="location.href='/goTest'">시험 보러가기</td>
-			</tr>
-			<tr>
-				<td>2과</td>
-				<td>시험 보러가기</td>
-			</tr>
-			<tr>
-				<td>3과</td>
-				<td>시험 보러가기</td>
-			</tr>
+			
+			<c:forEach var="level" begin="1" end="12">
+				<tr>
+					<td><c:out value="${level}"/></td>
+					<td onclick="wordTest(${level})">시험 보러가기</td>
+				</tr>
+			
+			</c:forEach>
+
 		</tbody>
 	</table>
 	
