@@ -8,6 +8,7 @@ body{
 a{
 	text-decoration : none;
 	color: white;
+	margin : 40px;
 }
 
 .h3_1{
@@ -62,7 +63,7 @@ h5{
 }
 
 .bar_menu{
-	margin-left : 43%;
+	margin-left : 37%;
 	display :flex;
 	list-style :none;
 	padding-left : 0;
