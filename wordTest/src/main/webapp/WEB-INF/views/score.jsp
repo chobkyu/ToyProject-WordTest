@@ -40,6 +40,6 @@
 		</table>
 		
 	</div>
-
+	<button onclick="location.href='/'">뒤로 가기</button>
 </body>
 </html>

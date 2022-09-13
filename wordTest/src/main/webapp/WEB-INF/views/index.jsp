@@ -24,9 +24,10 @@
 		<li><img src = "/resources/img/노예준2.jpg"></li>
 		<li><img src = "/resources/img/노예준4.jpg"></li>
 	</ul>
-	 -->
+	  -->
 	<br>
 	<hr>
 	<h5>제작자 | 조병규</h5>
+	<h5>학생 | 슬레이브준</h5>
 </body>
 </html>
