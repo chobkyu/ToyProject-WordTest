@@ -6,6 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>점수 확인</title>
+	<link rel = "stylesheet" href = "/resources/css/wordTest.css">
 </head>
 <script>
 	history.replaceState({}, null, location.pathname);
@@ -22,10 +23,12 @@
 	<div>
 		<table border="1">
 			<thead>
-				<th>점수</th>
-				<th>날짜</th>
-				<th>등급</th>
-				<th>챕터</th>
+				<tr>
+					<th>점수</th>
+					<th>날짜</th>
+					<th>등급</th>
+					<th>챕터</th>
+				</tr>
 			</thead>
 			<tbody>
 				<c:forEach items="${slist}" var="dataVO">
@@ -33,7 +36,7 @@
 						<td><c:out value="${dataVO.score }"/></td>
 						<td><c:out value="${dataVO.date }"/></td>
 						<td><c:out value="${dataVO.grade }"/></td>
-						<td><c:out value="${dataVO.chapter }"/></td>
+						<td><c:out value="${dataVO.chapter }"/>과</td>
 					</tr>
 				</c:forEach>
 			</tbody>

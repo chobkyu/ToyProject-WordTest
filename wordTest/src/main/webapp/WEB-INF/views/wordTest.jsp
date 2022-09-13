@@ -5,6 +5,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>단원 고르기</title>
+	<link rel = "stylesheet" href = "/resources/css/wordTest.css">
 </head>
 
 <script>
@@ -16,13 +17,18 @@
 	}
 </script>
 <body>
-	<h1> 단어 시험</h1>
-	<h5> 해당 과를 누르면 시험이 시작됩니다</h5>
+	<div class="header">
+		<h1> 단어 시험</h1>
+		<h5> 해당 과를 누르면 시험이 시작됩니다</h5>
+	</div>
+
 	<br><hr><br>
 	<table>
 		<thead>
-			<th>몇 과일까</th>
-			<th>몇 점을 맞을 수 있을까</th>
+			<tr>
+				<th>몇 과일까</th>
+				<th>몇 점을 맞을 수 있을까</th>
+			</tr>
 		</thead>
 		<tbody>
 			

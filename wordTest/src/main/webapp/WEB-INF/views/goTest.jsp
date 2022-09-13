@@ -6,6 +6,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>단어 시험</title>
+	<link rel = "stylesheet" href = "/resources/css/wordTest.css">
 </head>
 <script>
 	var arr = new Array;
@@ -69,7 +70,7 @@
 	}
 </script>
 <body>
-	<div id="header">
+	<div id="header" class="header">
 		<h1> 단어 시험</h1>
 		<h2 id="comment"></h2>
 		<h4> 1과 (80점 미만이면 틀린 개수만큼 5분씩 추가)</h4>
@@ -78,14 +79,27 @@
 	</div>
 	
 	<br><hr><br>
+	<table>
+		<thead>
+			<tr>
+				<th>단어</th>
+				<th>답</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${wlist}" var="dataVO">
+				<tr>
+					<td><c:out value="${dataVO.en}"></c:out> <p id="${dataVO.kr}"></p></td>
+					<td><input id= "${dataVO.en}" type="text" value=""></td>
+				</tr>
+		
+		
+			</c:forEach>
+		</tbody>
+	</table>
 	
-	<c:forEach items="${wlist}" var="dataVO">
-	<div>
-		<p><c:out value="${dataVO.en}"></c:out></p> <p id="${dataVO.kr}"><p>
-		<input id= "${dataVO.en}" type="text" value="">
-	</div>
 	<br>
-	</c:forEach>
+	
 		
 		
 	<br><br>
