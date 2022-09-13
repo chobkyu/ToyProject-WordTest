@@ -102,7 +102,7 @@ public class HomeController {
 		List<ScoreVO> slist = new ArrayList<ScoreVO>();
 		slist = scoreService.selectScore();
 		
-		
+		model.addAttribute("slist",slist);
 		return "score";
 	}
 }
