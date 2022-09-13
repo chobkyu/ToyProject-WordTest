@@ -10,4 +10,10 @@
   		from enWord
   		limit 1
   	</select>
+  	
+  	<select id="exam" resultType="toy.wordTest.app.WordVO">
+  		select *
+  		from enWord
+  		where level=#{seq}
+  	</select>
   </mapper>

@@ -2,6 +2,7 @@ package toy.wordTest.app;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import javax.inject.Inject;
@@ -64,10 +65,12 @@ public class HomeController {
 	
 	@RequestMapping(value = "/goTest", method = RequestMethod.GET)
 	public String goTest(HttpServletRequest request, Model model) {
-		String seq = request.getParameter("seq");
+		int seq = Integer.parseInt(request.getParameter("seq"));
 		
 		System.out.println(seq+"과 시험 시작!!!");
 		
+		List<WordVO> wlist = wordService.exam(seq);
+		System.out.println(wlist.get(0).getEn());
 	
 		
 		return "goTest";
