@@ -77,6 +77,7 @@ public class HomeController {
 		System.out.println(wlist.get(0).getEn());
 		int size = wlist.size();
 		
+		model.addAttribute("seq",seq);
 		model.addAttribute("wlist",wlist);
 		model.addAttribute("size",size);
 		return "goTest";
@@ -95,7 +96,7 @@ public class HomeController {
 			sVO.setScore(Integer.parseInt(request.getParameter("score")));
 			sVO.setDate(request.getParameter("time"));
 			sVO.setGrade(request.getParameter("grade"));
-
+			sVO.setChapter(request.getParameter("chapter"));
 			scoreService.insertScore(sVO);
 		}
 		

@@ -64,8 +64,8 @@
 		var time = today.toLocaleString();
 		alert(time+" 결과를 제출합니다");
 		console.log(lastScore);
-		
-		location.href = "/score?score="+lastScore+"&time="+time+"&option=insert&grade="+grade;
+		var seq = "${seq}";
+		location.href = "/score?score="+lastScore+"&time="+time+"&option=insert&grade="+grade+"&chapter="+seq;
 	}
 </script>
 <body>

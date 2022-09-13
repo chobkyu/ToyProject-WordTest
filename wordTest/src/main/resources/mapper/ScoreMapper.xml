@@ -5,8 +5,8 @@
 
   <mapper namespace="toy.wordTest.mapper.ScoreMapper">
   	<insert id="insertScore">
-  		insert into score(score,date,grade)
-  		values (#{score},#{date},#{grade})
+  		insert into score(score,date,grade,chapter)
+  		values (#{score},#{date},#{grade},#{chapter})
   	</insert>
   	
   	<select id="selectScore" resultType="toy.wordTest.app.ScoreVO">

@@ -7,6 +7,10 @@
 	<meta charset="UTF-8">
 	<title>점수 확인</title>
 </head>
+<script>
+	history.replaceState({}, null, location.pathname);
+
+</script>
 <body>
 	<div class = "header">
 		<h1> 점수 보기</h1>
@@ -21,6 +25,7 @@
 				<th>점수</th>
 				<th>날짜</th>
 				<th>등급</th>
+				<th>챕터</th>
 			</thead>
 			<tbody>
 				<c:forEach items="${slist}" var="dataVO">
@@ -28,6 +33,7 @@
 						<td><c:out value="${dataVO.score }"/></td>
 						<td><c:out value="${dataVO.date }"/></td>
 						<td><c:out value="${dataVO.grade }"/></td>
+						<td><c:out value="${dataVO.chapter }"/></td>
 					</tr>
 				</c:forEach>
 			</tbody>
