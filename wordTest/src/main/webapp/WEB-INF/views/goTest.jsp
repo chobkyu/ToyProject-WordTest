@@ -20,6 +20,8 @@
 		for (var i =0; i<arr.length;i++){
 			var id = arr[i].en
 			var answer = document.getElementById(id).value;
+			console.log(answer);
+			console.log(arr[i].kr);
 			if(answer === arr[i].kr){
 				console.log(i+"번 정답");
 				score++;
@@ -30,24 +32,46 @@
 			}
 		}
 		console.log(score/arr.length);
+		document.getElementById("score").innerText="맞힌 개수 : "+score+"";
 		score=(score/arr.length)*100;
+		if(score<80){
+			var log = (arr.length-score)*5
+			document.getElementById("time").innerText="늘어나는 수업 시간 : "+log+"분";
+			document.getElementById("comment").innerText="멀어져가는 인서울의 꿈..."
+			if(score<60){
+				document.getElementById("comment").innerText="경기도를 알아보기 시작하는 점수..."
+			}
+			if(score<40){
+				document.getElementById("comment").innerText="oh shit 그대는 치킨대학교에 가겠군요"
+			}
+		}
 		alert(parseInt(score));
 		
 	}
 </script>
 <body>
-	<h1> 단어 시험</h1>
-	<h5> 1과 (80점 미만이면 틀린 개수만큼 5분씩 추가)</h5>
+	<div id="header">
+		<h1> 단어 시험</h1>
+		<h2 id="comment"></h2>
+		<h4> 1과 (80점 미만이면 틀린 개수만큼 5분씩 추가)</h4>
+		<p id="score"></p>
+		<p id="time"></p>
+	</div>
+	
 	<br><hr><br>
 	
 	<c:forEach items="${wlist}" var="dataVO">
+	<div>
 		<p><c:out value="${dataVO.en}"></c:out></p> <p id="${dataVO.kr}"><p>
 		<input id= "${dataVO.en}" type="text" value="">
+	</div>
+	<br>
 	</c:forEach>
 		
 		
 	<br><br>
-	<button onclick="score()" type="submit" value="제출하기">제출하기</button>
+	<button onclick="score()" type="submit" value="채점하기">채점하기</button>
+	<button>제출하기</button>
 	
 	
 	
