@@ -15,6 +15,8 @@
 	</c:forEach>
 	console.log(arr[0].en);
 	
+	var lastScore = 0;
+	
 	function score(){
 		var score = 0;
 		for (var i =0; i<arr.length;i++){
@@ -33,20 +35,33 @@
 		}
 		console.log(score/arr.length);
 		document.getElementById("score").innerText="맞힌 개수 : "+score+"";
-		score=(score/arr.length)*100;
-		if(score<80){
+		var scoreNum=(score/arr.length)*100;
+		if(scoreNum<80){
 			var log = (arr.length-score)*5
 			document.getElementById("time").innerText="늘어나는 수업 시간 : "+log+"분";
 			document.getElementById("comment").innerText="멀어져가는 인서울의 꿈..."
-			if(score<60){
+			if(scoreNum<60){
 				document.getElementById("comment").innerText="경기도를 알아보기 시작하는 점수..."
 			}
-			if(score<40){
+			if(scoreNum<40){
 				document.getElementById("comment").innerText="oh shit 그대는 치킨대학교에 가겠군요"
 			}
 		}
-		alert(parseInt(score));
+		if(lastScore===0){
+			lastScore = parseInt(scoreNum);
+		}
 		
+		alert(parseInt(scoreNum));
+		
+	}
+	
+	function submitScore(){
+		let today = new Date();
+		var time = today.toLocaleString();
+		alert(time+" 결과를 제출합니다");
+		console.log(lastScore);
+		
+		location.href = "/score?score="+lastScore+"&time="+time;
 	}
 </script>
 <body>
@@ -71,7 +86,7 @@
 		
 	<br><br>
 	<button onclick="score()" type="submit" value="채점하기">채점하기</button>
-	<button>제출하기</button>
+	<button onclick="submitScore()">제출하기</button>
 	
 	
 	
