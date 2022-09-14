@@ -7,7 +7,11 @@
   <mapper namespace="toy.wordTest.mapper.wordMapper">
   	<select id="lastLevel" resultType="int">
   		select level
-  		from enWord
+  		from 
+	  		(select * 
+	  		from enWord 
+	  		order by 
+	  		level desc) A
   		limit 1
   	</select>
   	

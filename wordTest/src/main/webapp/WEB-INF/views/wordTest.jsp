@@ -32,7 +32,7 @@
 		</thead>
 		<tbody>
 			
-			<c:forEach var="level" begin="1" end="${count}">
+			<c:forEach var="level" begin="1" end="${last}">
 				<tr>
 					<td><c:out value="${level}"/></td>
 					<td onclick="wordTest(${level})">시험 보러가기</td>

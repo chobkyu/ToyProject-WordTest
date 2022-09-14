@@ -63,9 +63,10 @@ public class HomeController {
 		}
 		System.out.println(level);
 		
-		int countChapter = 20;
 		
-		model.addAttribute("count",countChapter);
+		
+		model.addAttribute("last",level);
+		
 		
 		return "wordTest";
 	}
@@ -134,6 +135,17 @@ public class HomeController {
 	public String word(HttpServletRequest request, Model model) {
 		int countChapter = 20;
 		String option = request.getParameter("option");
+		int level= 0;
+		try {
+			level = (wordService.lastLevel());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(level);
+		
+		model.addAttribute("last",level);
+		
 		if(option == null) {
 			
 		}else if(option.equals("study")) {

@@ -23,7 +23,8 @@
 			<c:if test="${score>=70 and score<80}">수도권 or 지거국 알아보는 단계</c:if>
 			<c:if test="${score>=60 and score<70}">전문대를 고민</c:if>
 			<c:if test="${score>=50 and score<60}">지잡대를 알아보자!</c:if>
-			<c:if test="${score<50}">치킨대학교에서 그대를 부릅니다...</c:if>
+			<c:if test="${score>=40 and score<50}">있어 당신이 갈 대학... 군대...</c:if>
+			<c:if test="${score<40}">치킨대학교에서 그대를 부릅니다...</c:if>
 		</h2>
 		<br><hr><br>
 		
