@@ -9,6 +9,7 @@
 </head>
 
 <script>
+
 	function wordTest(level){
 		var level = level;
 		console.log(level);

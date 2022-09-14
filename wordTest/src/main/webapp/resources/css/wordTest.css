@@ -43,3 +43,9 @@ button{
 	border-radius: 10px;
 	font-size:10;
 }
+
+input{
+	width : 300px;
+	padding : 5px;
+	border-radius: 5px;
+}
