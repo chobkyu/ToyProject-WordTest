@@ -2,6 +2,7 @@ package toy.wordTest.app;
 
 import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -76,6 +77,8 @@ public class HomeController {
 		List<WordVO> wlist = wordService.exam(seq);
 		System.out.println(wlist.get(0).getEn());
 		int size = wlist.size();
+		
+		Collections.shuffle(wlist);
 		int temp = size/2;
 		List<WordVO> slist = new ArrayList<WordVO>();  //문장 시험 문제
 		List<WordVO> elist = new ArrayList<WordVO>();
