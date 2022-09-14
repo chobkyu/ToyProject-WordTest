@@ -9,15 +9,21 @@
 	<link rel = "stylesheet" href = "/resources/css/wordTest.css">
 </head>
 <script>
-	var arr = new Array;
+	var arr = new Array;  //단어
+	var arr2 = new Array;  //문장
 	
-	<c:forEach items="${wlist}" var="dataVO">
+	<c:forEach items="${elist}" var="dataVO">
 		arr.push({en:"${dataVO.en}",kr:"${dataVO.kr}",level:"${dataVO.level}"});
+	</c:forEach>
+	<c:forEach items="${slist}" var="dataVO">
+		arr2.push({en:"${dataVO.en}",kr:"${dataVO.kr}",level:"${dataVO.level}",enSentence:"${dataVO.enSentence}",krSentence:"${dataVO.krSentence}"});
 	</c:forEach>
 	console.log(arr[0].en);
 	
 	var lastScore = 0;
 	var grade="F";
+	
+	//채점
 	function score(){
 		var score = 0;
 		for (var i =0; i<arr.length;i++){
@@ -34,7 +40,24 @@
 				console.log(i+"번 오답");
 			}
 		}
+		
+		for (var i =0; i<arr2.length;i++){
+			var id = arr2[i].en
+			var answer = document.getElementById(id).value;
+			console.log(answer);
+			console.log(arr[i].kr);
+			if(answer === arr2[i].en){
+				console.log(i+"번 정답");
+				score++;
+			}
+			else{
+				document.getElementById(arr2[i].kr).innerText="오답";
+				console.log(i+"번 오답");
+			}
+		}
 		console.log(score/arr.length);
+		
+		//점수
 		document.getElementById("score").innerText="맞힌 개수 : "+score+"";
 		var scoreNum=(score/arr.length)*100;
 		grade="A";
@@ -60,6 +83,8 @@
 		
 	}
 	
+	
+	// 시험 점수 제출
 	function submitScore(){
 		let today = new Date();
 		var time = today.toLocaleString();
@@ -87,7 +112,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<c:forEach items="${wlist}" var="dataVO">
+			<c:forEach items="${elist}" var="dataVO">
 				<tr>
 					<td><c:out value="${dataVO.en}"></c:out> <p id="${dataVO.kr}"></p></td>
 					<td><input id= "${dataVO.en}" type="text" value=""></td>
@@ -100,7 +125,26 @@
 	
 	<br>
 	
+	<table>
+		<thead>
+			<tr>
+				<th>영어문장</th>
+				<th>뜻</th>
+				<th>빈칸 단어</th>
+			</tr>
+		</thead>
+				<tbody>
+			<c:forEach items="${slist}" var="dataVO">
+				<tr>
+					<td><c:out value="${dataVO.enSentence}"></c:out> <p id="${dataVO.kr}"></p></td>
+					<td><c:out value="${dataVO.krSentence}"/></td>
+					<td><input id= "${dataVO.en}" type="text" value=""></td>
+				</tr>
 		
+		
+			</c:forEach>
+		</tbody>
+	</table>
 		
 	<br><br>
 	<button onclick="score()" type="submit" value="채점하기">채점하기</button>

@@ -76,9 +76,20 @@ public class HomeController {
 		List<WordVO> wlist = wordService.exam(seq);
 		System.out.println(wlist.get(0).getEn());
 		int size = wlist.size();
+		int temp = size/2;
+		List<WordVO> slist = new ArrayList<WordVO>();  //문장 시험 문제
+		List<WordVO> elist = new ArrayList<WordVO>();
+				
+		for(int i=0; i<temp; i++) {
+			slist.add(wlist.get(i));
+		}
+		for(int i=temp; i<size; i++) {
+			elist.add(wlist.get(i));
+		}
 		
 		model.addAttribute("seq",seq);
-		model.addAttribute("wlist",wlist);
+		model.addAttribute("slist",slist);
+		model.addAttribute("elist",elist);
 		model.addAttribute("size",size);
 		return "goTest";
 	}
