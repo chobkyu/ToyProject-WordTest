@@ -59,7 +59,10 @@
 		
 		//점수
 		document.getElementById("score").innerText="맞힌 개수 : "+score+"";
-		var scoreNum=(score/arr.length)*100;
+		var size = arr.length+arr2.length;
+		console.log(size);
+		var scoreNum=parseInt((score/size)*100);
+		console.log(scoreNum);
 		grade="A";
 		if(scoreNum<80){
 			var log = (arr.length-score)*5
@@ -74,6 +77,9 @@
 				grade="F";
 				document.getElementById("comment").innerText="oh shit 그대는 치킨대학교에 가겠군요"
 			}
+		}
+		else{
+			document.getElementById("comment").innerText="서울대도 꿈은 아니다!";
 		}
 		if(lastScore===0){
 			lastScore = parseInt(scoreNum);
