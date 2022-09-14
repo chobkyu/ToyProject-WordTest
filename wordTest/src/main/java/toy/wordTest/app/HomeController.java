@@ -119,7 +119,34 @@ public class HomeController {
 		List<ScoreVO> slist = new ArrayList<ScoreVO>();
 		slist = scoreService.selectScore();
 		
+		int score = 0;
+		for(int i=0; i<slist.size();i++) {
+			score+=slist.get(i).getScore();
+		}
+		score = score/slist.size();  //평균점수
+		
+		model.addAttribute("score",score);
 		model.addAttribute("slist",slist);
 		return "score";
 	}
+	
+	@RequestMapping(value = "/word", method = {RequestMethod.GET,RequestMethod.POST})
+	public String word(HttpServletRequest request, Model model) {
+		int countChapter = 20;
+		String option = request.getParameter("option");
+		if(option == null) {
+			
+		}else if(option.equals("study")) {
+			int seq = Integer.parseInt(request.getParameter("seq"));
+			List<WordVO> wlist = wordService.exam(seq);
+			
+			model.addAttribute("seq",seq);
+			model.addAttribute("wlist",wlist);
+			
+			return "wordStudy";
+		}
+		model.addAttribute("count",countChapter);
+		return "word";
+	}
+	
 }

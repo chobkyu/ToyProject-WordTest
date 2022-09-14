@@ -15,7 +15,16 @@
 <body>
 	<div class = "header">
 		<h1> 점수 보기</h1>
-		
+		<h2>평균점수 ㅣ ${score}</h2>
+		<h2>
+			당신의 레벨 :
+			<c:if test="${score>=90}">잘하면 서울대?</c:if>
+			<c:if test="${score>=80 and score<90}">노력하면 인서울 가능?</c:if>
+			<c:if test="${score>=70 and score<80}">수도권 or 지거국 알아보는 단계</c:if>
+			<c:if test="${score>=60 and score<70}">전문대를 고민</c:if>
+			<c:if test="${score>=50 and score<60}">지잡대를 알아보자!</c:if>
+			<c:if test="${score<50}">치킨대학교에서 그대를 부릅니다...</c:if>
+		</h2>
 		<br><hr><br>
 		
 	</div>
