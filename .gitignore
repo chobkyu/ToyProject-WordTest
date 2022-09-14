@@ -110,3 +110,5 @@ hs_err_pid*
 # End of https://www.toptal.com/developers/gitignore/api/eclipse,java
 *.txt
 apache-tomcat-8.5.73/conf/catalina.policy
+wordTest/src/main/webapp/WEB-INF/spring/root-context.xml
+wordTest/src/main/webapp/WEB-INF/spring/root-context.xml
