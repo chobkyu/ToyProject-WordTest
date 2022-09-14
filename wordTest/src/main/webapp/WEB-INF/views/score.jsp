@@ -26,7 +26,7 @@
 				<tr>
 					<th>점수</th>
 					<th>날짜</th>
-					<th>등급</th>
+					<th title="80 이상 A 60 이상 B 40 이상 C 그 밑은 F">등급</th>
 					<th>챕터</th>
 				</tr>
 			</thead>

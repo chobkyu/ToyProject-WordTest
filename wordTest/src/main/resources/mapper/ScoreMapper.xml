@@ -12,5 +12,6 @@
   	<select id="selectScore" resultType="toy.wordTest.app.ScoreVO">
   		select *
   		from score
+  		order by seq desc
   	</select>
   </mapper>

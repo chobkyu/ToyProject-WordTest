@@ -63,7 +63,9 @@ public class HomeController {
 		}
 		System.out.println(level);
 		
+		int countChapter = 20;
 		
+		model.addAttribute("count",countChapter);
 		
 		return "wordTest";
 	}
@@ -81,7 +83,7 @@ public class HomeController {
 		Collections.shuffle(wlist);
 		int temp = size/2;
 		List<WordVO> slist = new ArrayList<WordVO>();  //문장 시험 문제
-		List<WordVO> elist = new ArrayList<WordVO>();
+		List<WordVO> elist = new ArrayList<WordVO>();  //단어 시험 문제
 				
 		for(int i=0; i<temp; i++) {
 			slist.add(wlist.get(i));
