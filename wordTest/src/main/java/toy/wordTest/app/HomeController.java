@@ -125,7 +125,7 @@ public class HomeController {
 			sVO.setGrade(request.getParameter("grade"));
 			sVO.setChapter(request.getParameter("chapter"));
 			scoreService.insertScore(sVO);
-			sendMailTest(sVO.getScore(),sVO.getChapter());
+			sendMailTest(sVO.getScore(),sVO.getChapter(),sVO.getDate());
 		}
 		
 		List<ScoreVO> slist = new ArrayList<ScoreVO>();
@@ -172,12 +172,12 @@ public class HomeController {
 		return "word";
 	}
 	
-	public void sendMailTest(int score, String Chapter) throws Exception{
+	public void sendMailTest(int score, String chapter, String date) throws Exception{
         
-        String subject = "test 메일";
-        String content = "메일 테스트 내용";
-        String from = "보내는이 아이디@도메인주소";
-        String to = "받는이 아이디@도메인주소";
+        String subject = "노예준 영단어 시험 점수";
+        String content = date+"에 응시한 노예준의 "+chapter+" 과 점수는 "+score+"점 입니다";
+        String from = "qudqud97@naver.com";
+        String to = "rtw2343@naver.com";
         
         try {
             MimeMessage mail = mailSender.createMimeMessage();
