@@ -31,7 +31,7 @@
 			var answer = document.getElementById(id).value;
 			console.log(answer);
 			console.log(arr[i].kr);
-			if((arr[i].kr).includes(answer)){
+			if((arr[i].kr)===(answer)){
 				console.log(i+"번 정답");
 				score++;
 			}
