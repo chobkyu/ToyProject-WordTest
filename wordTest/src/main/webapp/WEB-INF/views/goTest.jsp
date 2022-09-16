@@ -65,7 +65,7 @@
 		console.log(scoreNum);
 		grade="A";
 		if(scoreNum<80){
-			var log = (arr.length-score)*5
+			var log = (size-score)*5
 			document.getElementById("time").innerText="늘어나는 수업 시간 : "+log+"분";
 			document.getElementById("comment").innerText="멀어져가는 인서울의 꿈...";
 			grade="B";
