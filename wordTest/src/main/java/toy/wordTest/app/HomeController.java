@@ -177,7 +177,7 @@ public class HomeController {
         String subject = "노예준 영단어 시험 점수";
         String content = date+"에 응시한 노예준의 "+chapter+" 과 점수는 "+score+"점 입니다";
         String from = "qudqud97@naver.com";
-        String to = "rtw2343@naver.com";
+        String to = "songzonmom2@naver.com";
         
         try {
             MimeMessage mail = mailSender.createMimeMessage();
