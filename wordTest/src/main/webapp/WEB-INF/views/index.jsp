@@ -20,9 +20,9 @@
 	<br>
 	<
 	<ul class="Gimg">
-		<li><img src = /resources/img/노예준1.png></li>
-		<li><img src = "/resources/img/노예준2.jpg"></li>
-		<li><img src = "/resources/img/노예준4.jpg"></li>
+		<li><img src = "https://myhsproject.s3.ap-northeast-2.amazonaws.com/%EB%85%B8%EC%98%88%EC%A4%801.png"></li>
+		<li><img src = "https://myhsproject.s3.ap-northeast-2.amazonaws.com/%EB%85%B8%EC%98%88%EC%A4%802.jpg"></li>
+		<li><img src = "https://myhsproject.s3.ap-northeast-2.amazonaws.com/%EB%85%B8%EC%98%88%EC%A4%804.jpg"></li>
 	</ul>
 	  
 	<br>
